@@ -1,0 +1,794 @@
+body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    background-color: #FFF3E0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .page-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #ffffff;
+  }
+  :root {
+    --primary-color: #E63946;
+    --primary-dark: #C1121F;
+    --secondary-color: #FF7A00;
+    --secondary-light: #FF9E6D;
+    --accent-color: #FFD166;
+    --dark-color: #333333;
+    --light-color: #FFFFFF;
+    --gray-light: #F8F9FA;
+    --gray-medium: #E9ECEF;
+    --gray-dark: #6C757D;
+    --shadow-soft: 0 2px 15px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 5px 25px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --border-radius: 15px;
+    --border-radius-sm: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: linear-gradient(135deg, #FFF8F3 0%, #FFFFFF 100%);
+    min-height: 100vh;
+    color: var(--dark-color);
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header yang sama dengan login page */
+.top-bar {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: var(--light-color);
+    padding: 8px 0;
+    box-shadow: 0 2px 10px rgba(230, 57, 70, 0.2);
+    position: relative;
+}
+
+.top-bar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+}
+
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--light-color);
+    font-size: 13px;
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 5px 10px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.contact-item img {
+    width: 14px;
+    height: 14px;
+    filter: brightness(0) invert(1);
+}
+
+.social-links {
+    display: flex;
+    gap: 8px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.social-icon .icon-wrapper {
+    width: 18px;
+    height: 18px;
+}
+
+.social-icon .icon-bg {
+    width: 100%;
+    height: 100%;
+    filter: brightness(0) invert(1);
+}
+
+/* PERBAIKAN 1: Main Container diperbesar */
+.registration-container {
+    flex: 1;
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+    background: var(--light-color);
+    min-height: 550px;
+    height: 85vh;
+    max-height: 750px;
+}
+
+/* Promo Panel */
+.promo-panel {
+    flex: 0.8;
+    background: linear-gradient(rgba(230, 57, 70, 0.9), rgba(255, 122, 0, 0.8)), url('images/c9a5c5de1dc6770a54a2c50e0a8ad3a7a4675829.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-color);
+    padding: 30px;
+    position: relative;
+}
+
+.promo-content {
+    position: relative;
+    z-index: 2;
+    max-width: 350px;
+}
+
+.promo-title {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.promo-subtitle {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 15px;
+    opacity: 0.9;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 12px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.promo-features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.feature-icon {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+/* PERBAIKAN 2: Form Panel dengan overflow dan scroll */
+.form-panel {
+    flex: 1;
+    background: var(--light-color);
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    overflow-y: auto;
+    align-items: flex-start;
+    /* PERUBAHAN: align items ke start */
+}
+
+/* PERBAIKAN 3: Wrapper dengan min-height untuk scroll */
+.registration-form-wrapper {
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-height: 600px;
+    /* MEMASTIKAN ada cukup tinggi untuk scroll */
+}
+
+/* PERBAIKAN 4: Form header tetap di atas */
+.form-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    background: var(--light-color);
+    padding: 10px 0 15px 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--gray-light);
+    margin-bottom: 5px;
+}
+
+.form-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 3px;
+}
+
+.form-logo-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.form-logo-text {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--primary-color);
+}
+
+.form-title {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 600;
+    font-size: 28px;
+    color: var(--dark-color);
+    position: relative;
+    display: inline-block;
+    margin-bottom: 3px;
+}
+
+.form-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--secondary-color);
+    border-radius: 1px;
+}
+
+.form-subtitle {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--gray-dark);
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Registration Form */
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--dark-color);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.form-group label i {
+    color: var(--primary-color);
+    font-size: 12px;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+/* PERBAIKAN 5: Input dengan padding yang benar untuk icon */
+.form-group input {
+    width: 100%;
+    height: 44px;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--gray-medium);
+    background: var(--gray-light);
+    padding: 0 50px 0 15px;
+    /* PERBAIKAN: padding kanan lebih besar untuk icon mata */
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    background: var(--light-color);
+    box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.1);
+}
+
+/* PERBAIKAN 6: Position icon kunci dengan benar */
+.input-icon {
+    position: absolute;
+    right: 40px;
+    /* PERUBAHAN: dari 15px ke 40px untuk memberi ruang icon mata */
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-dark);
+    font-size: 14px;
+}
+
+/* PERBAIKAN 7: Toggle password dengan position yang benar */
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    /* Tetap di posisi paling kanan */
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--gray-dark);
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.toggle-password:hover {
+    color: var(--primary-color);
+    background: rgba(230, 57, 70, 0.1);
+}
+
+/* Password strength indicator */
+.password-strength {
+    margin-top: 4px;
+    height: 4px;
+    background: var(--gray-medium);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.strength-meter {
+    height: 100%;
+    width: 0%;
+    background: #FF4444;
+    transition: var(--transition);
+    border-radius: 2px;
+}
+
+.strength-meter.weak {
+    width: 25%;
+    background: #FF4444;
+}
+
+.strength-meter.fair {
+    width: 50%;
+    background: #FFA726;
+}
+
+.strength-meter.good {
+    width: 75%;
+    background: #FFD166;
+}
+
+.strength-meter.strong {
+    width: 100%;
+    background: #4CAF50;
+}
+
+.password-hint {
+    font-size: 11px;
+    color: var(--gray-dark);
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.password-hint i {
+    font-size: 10px;
+}
+
+/* Terms and conditions */
+.terms-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.terms-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.terms-text {
+    font-size: 12px;
+    color: var(--gray-dark);
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.terms-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.terms-link:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.submit-button {
+    height: 46px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: var(--light-color);
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.submit-button:hover {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #A00D1A 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.2);
+}
+
+.login-prompt {
+    text-align: center;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: var(--gray-dark);
+    padding: 12px;
+    background: var(--gray-light);
+    border-radius: var(--border-radius-sm);
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.login-prompt p {
+    margin: 0;
+}
+
+.login-link {
+    font-weight: 600;
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 2px 5px;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.login-link:hover {
+    color: var(--secondary-color);
+    background: rgba(255, 122, 0, 0.08);
+}
+
+/* Responsive untuk tablet */
+@media (max-width: 768px) {
+    .registration-container {
+        flex-direction: column;
+        max-width: 450px;
+        height: auto;
+        min-height: auto;
+        margin: 15px auto;
+    }
+
+    .promo-panel {
+        flex: none;
+        min-height: 180px;
+        padding: 20px;
+    }
+
+    .promo-content {
+        max-width: 100%;
+    }
+
+    .promo-title {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .promo-features {
+        display: none;
+    }
+
+    .form-panel {
+        padding: 20px 15px;
+        max-height: 500px;
+    }
+
+    .registration-form-wrapper {
+        max-width: 100%;
+        gap: 12px;
+    }
+
+    .top-bar-container {
+        padding: 0 20px;
+    }
+
+    .contact-info {
+        gap: 10px;
+    }
+
+    .contact-item {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+
+    .social-icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .form-title {
+        font-size: 24px;
+    }
+
+    .form-subtitle {
+        font-size: 13px;
+    }
+
+    .form-group input {
+        height: 42px;
+    }
+
+    .submit-button {
+        height: 44px;
+        font-size: 14px;
+    }
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 480px) {
+    .registration-container {
+        margin: 10px;
+        width: calc(100% - 20px);
+        border-radius: 12px;
+    }
+
+    .promo-panel {
+        min-height: 140px;
+        padding: 15px;
+    }
+
+    .promo-title {
+        font-size: 20px;
+    }
+
+    .promo-subtitle {
+        font-size: 12px;
+        padding: 8px;
+        margin-top: 8px;
+    }
+
+    .form-panel {
+        padding: 15px 12px;
+    }
+
+    .form-logo-text {
+        font-size: 20px;
+    }
+
+    .form-title {
+        font-size: 22px;
+    }
+
+    .form-subtitle {
+        font-size: 12px;
+    }
+
+    .top-bar-container {
+        flex-direction: column;
+        gap: 8px;
+        padding: 8px 12px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 6px;
+    }
+
+    .contact-item {
+        width: 100%;
+        justify-content: center;
+        font-size: 12px;
+        padding: 4px 6px;
+    }
+
+    .social-links {
+        margin-top: 3px;
+    }
+
+    .form-group input {
+        height: 40px;
+        font-size: 13px;
+    }
+
+    .input-icon {
+        right: 36px;
+        font-size: 13px;
+    }
+
+    .toggle-password {
+        right: 12px;
+        font-size: 13px;
+    }
+
+    .submit-button {
+        height: 42px;
+        font-size: 14px;
+    }
+}
+
+/* Animation untuk logo */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.form-logo-icon {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Error states */
+.form-group.error input {
+    border-color: #FF4444;
+    background: rgba(255, 68, 68, 0.03);
+}
+
+.error-message {
+    color: #FF4444;
+    font-size: 11px;
+    margin-top: 3px;
+    display: none;
+}
+
+.form-group.error .error-message {
+    display: block;
+}
+
+/* Success states */
+.form-group.success input {
+    border-color: #4CAF50;
+}
+
+.form-group.success .input-icon {
+    color: #4CAF50;
+}
+
+/* Loading animation */
+.loading {
+    position: relative;
+    color: transparent !important;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* PERBAIKAN 8: Scrollbar styling */
+.form-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.form-panel::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.form-panel::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+.form-panel::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}

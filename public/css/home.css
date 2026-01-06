@@ -1,0 +1,92 @@
+:root {
+  --color-primary-bg: #fff3e0;
+  --color-primary-accent: #e53935;
+  --color-secondary-accent: #ff9800;
+  --color-tertiary-accent: #fbc02d;
+  --color-dark-text: #2c2f24;
+  --color-light-text: #f9f9f7;
+  --color-white: #ffffff;
+  --color-dark-bg: #5c4033;
+  --color-button-primary: #ad343e;
+  --color-border: #dbdfd0;
+  --font-body: 'DM Sans', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+  --font-logo: 'Baloo 2', cursive;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-primary-bg);
+  color: var(--color-dark-text);
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: var(--color-primary-bg);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px; /* Adjusted for content padding */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 118px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-button-primary);
+  color: var(--color-white);
+  border: none;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-dark-text);
+  border: 1.5px solid var(--color-dark-text);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-dark-text);
+  color: var(--color-white);
+}

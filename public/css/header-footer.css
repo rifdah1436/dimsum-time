@@ -1,0 +1,759 @@
+/* header-footer.css - Header dan Footer untuk semua halaman - UKURAN NORMAL */
+:root {
+  --color-primary-red: #E63946;
+  --color-primary-dark: #C1121F;
+  --color-primary-orange: #FF7A00;
+  --color-primary-yellow: #FFD166;
+  --color-primary-bg: #FFF;
+  --color-text-light: #FFFFFF;
+  --color-text-dark: #333333;
+  --color-text-subtle: #666666;
+  --color-footer-bg: #1A1A1A;
+  --color-footer-text: #B3B3B3;
+  --color-footer-links: #999999;
+  --color-accent: #FF9E6D;
+  --color-light-bg: #FFF5F0;
+  --shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 5px 20px rgba(0, 0, 0, 0.15);
+  --shadow-hard: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --transition: all 0.3s ease;
+}
+
+/* ===== HEADER STYLES ===== */
+.dimsum-header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--color-primary-bg);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Top Bar */
+.dimsum-top-bar {
+  background: linear-gradient(135deg, var(--color-primary-red) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-text-light);
+  padding: 6px 0;
+  position: relative;
+}
+
+.dimsum-top-bar::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary-orange), var(--color-primary-yellow));
+}
+
+.dimsum-top-bar-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dimsum-contact-info {
+  display: flex;
+  gap: 20px;
+}
+
+.dimsum-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--color-text-light);
+  font-size: 12px;
+  font-weight: 500;
+  transition: var(--transition);
+  padding: 4px 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dimsum-contact-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+/* PERBAIKAN: Hilangkan filter dan perbesar gambar */
+.dimsum-contact-item img {
+  width: 16px;
+  /* DIPERBESAR dari 12px */
+  height: 16px;
+  /* DIPERBESAR dari 12px */
+  /* filter: brightness(0) invert(1); DIHAPUS */
+}
+
+.dimsum-top-social-links {
+  display: flex;
+  gap: 6px;
+}
+
+.dimsum-top-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+}
+
+.dimsum-top-social-icon:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.dimsum-top-social-icon .icon-wrapper {
+  width: 16px;
+  /* DIPERBESAR dari 14px */
+  height: 16px;
+  /* DIPERBESAR dari 14px */
+}
+
+/* PERBAIKAN: Hilangkan filter pada gambar social media */
+.dimsum-top-social-icon .icon-bg {
+  width: 100%;
+  height: 100%;
+  /* filter: brightness(0) invert(1); DIHAPUS */
+}
+
+/* Main Navigation */
+.dimsum-main-nav-wrapper {
+  padding: 0 20px;
+  background-color: var(--color-primary-bg);
+}
+
+.dimsum-main-nav-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  min-height: 60px;
+}
+
+/* Logo di pojok kiri - UKURAN NORMAL */
+.dimsum-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.dimsum-logo:hover {
+  transform: scale(1.02);
+}
+
+.dimsum-logo-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.dimsum-logo-text {
+  font-family: 'Baloo 2', cursive;
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--color-primary-orange);
+}
+
+/* Navigation Menu di tengah dengan spacing normal */
+.dimsum-nav-menu {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  margin-left: 40px;
+}
+
+.dimsum-nav-links {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dimsum-nav-links a {
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--color-text-dark);
+  transition: var(--transition);
+  position: relative;
+  white-space: nowrap;
+}
+
+.dimsum-nav-links a:hover {
+  background-color: var(--color-light-bg);
+  color: var(--color-primary-red);
+  transform: translateY(-1px);
+}
+
+.dimsum-nav-links a.active {
+  background-color: var(--color-primary-yellow);
+  color: var(--color-text-dark);
+  font-weight: 600;
+}
+
+/* Header Actions di pojok kanan - UKURAN NORMAL */
+.dimsum-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+/* Cart Icon - UKURAN NORMAL */
+.dimsum-cart-icon {
+  position: relative;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-light-bg);
+}
+
+.dimsum-cart-icon:hover {
+  transform: scale(1.05);
+  background: var(--color-primary-yellow);
+}
+
+.dimsum-cart-icon i {
+  font-size: 20px;
+  color: var(--color-primary-red);
+  transition: var(--transition);
+}
+
+.dimsum-cart-icon:hover i {
+  color: var(--color-text-dark);
+}
+
+.dimsum-cart-count {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--color-primary-red);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+}
+
+/* User Profile Dropdown - UKURAN NORMAL */
+.dimsum-user-profile {
+  position: relative;
+}
+
+.dimsum-profile-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: var(--transition);
+  background: var(--color-light-bg);
+  min-width: 120px;
+}
+
+.dimsum-profile-trigger:hover {
+  background: var(--color-primary-yellow);
+  transform: translateY(-1px);
+}
+
+.dimsum-profile-trigger i.fa-user-circle {
+  font-size: 20px;
+  color: var(--color-primary-red);
+  transition: var(--transition);
+}
+
+.dimsum-profile-trigger:hover i.fa-user-circle {
+  color: var(--color-text-dark);
+}
+
+.dimsum-profile-trigger i.fa-chevron-down {
+  font-size: 12px;
+  color: var(--color-text-dark);
+  transition: var(--transition);
+}
+
+.dimsum-profile-trigger span {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-dark);
+  flex: 1;
+}
+
+/* Dropdown Menu */
+.dimsum-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  width: 180px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: var(--shadow-hard);
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: var(--transition);
+  z-index: 1000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dimsum-user-profile:hover .dimsum-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dimsum-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: var(--color-text-dark);
+  transition: var(--transition);
+  font-size: 13px;
+}
+
+.dimsum-dropdown-item:hover {
+  background: var(--color-light-bg);
+  color: var(--color-primary-red);
+  padding-left: 20px;
+}
+
+.dimsum-dropdown-item i {
+  font-size: 14px;
+  width: 18px;
+  text-align: center;
+}
+
+.dimsum-dropdown-divider {
+  height: 1px;
+  background: var(--color-light-bg);
+  margin: 6px 16px;
+  opacity: 0.5;
+}
+
+/* ===== FOOTER STYLES ===== */
+.dimsum-footer {
+  background: linear-gradient(135deg, var(--color-footer-bg) 0%, #2D2D2D 100%);
+  padding: 50px 20px 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dimsum-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary-red), var(--color-primary-orange), var(--color-primary-yellow));
+}
+
+.dimsum-footer-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.dimsum-footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.dimsum-footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dimsum-footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.dimsum-footer-logo-icon {
+  width: 45px;
+  height: 45px;
+}
+
+.dimsum-footer-logo-text {
+  font-family: 'Baloo 2', cursive;
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--color-primary-orange);
+}
+
+.dimsum-footer-description {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-footer-text);
+  margin-bottom: 10px;
+}
+
+.dimsum-footer-socials {
+  display: flex;
+  gap: 10px;
+}
+
+.dimsum-footer-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.dimsum-footer-social-icon:hover {
+  background: var(--color-primary-orange);
+  transform: translateY(-2px);
+}
+
+.dimsum-footer-social-icon i {
+  color: white;
+  font-size: 16px;
+}
+
+.dimsum-footer-heading {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-text-light);
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.dimsum-footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 25px;
+  height: 2px;
+  background: var(--color-primary-orange);
+}
+
+.dimsum-footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dimsum-footer-links a {
+  color: var(--color-footer-links);
+  font-size: 13px;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.dimsum-footer-links a:hover {
+  color: var(--color-primary-orange);
+  transform: translateX(3px);
+}
+
+.dimsum-instagram-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.dimsum-instagram-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.dimsum-instagram-gallery img:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+.dimsum-footer-bottom {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dimsum-copyright {
+  font-size: 12px;
+  color: var(--color-footer-text);
+}
+
+.dimsum-payment-methods {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dimsum-payment-methods span {
+  font-size: 12px;
+  color: var(--color-footer-text);
+  margin-right: 8px;
+}
+
+.dimsum-payment-icon {
+  width: 32px;
+  height: 20px;
+  background: white;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* WhatsApp Floating Button */
+.dimsum-whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 55px;
+  height: 55px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-hard);
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 999;
+  animation: pulse 2s infinite;
+}
+
+.dimsum-whatsapp-float:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.dimsum-whatsapp-float i {
+  color: white;
+  font-size: 26px;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 1200px) {
+  .dimsum-top-bar-container {
+    padding: 0 40px;
+  }
+
+  .dimsum-main-nav-container {
+    padding: 0 40px;
+  }
+
+  .dimsum-nav-menu {
+    margin-left: 30px;
+  }
+
+  .dimsum-footer-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .dimsum-top-bar-container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 20px;
+  }
+
+  .dimsum-contact-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .dimsum-contact-item {
+    width: 100%;
+    justify-content: center;
+    font-size: 11px;
+  }
+
+  .dimsum-main-nav-container {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .dimsum-logo-img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .dimsum-logo-text {
+    font-size: 22px;
+  }
+
+  .dimsum-nav-menu {
+    margin-left: 0;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    order: 3;
+  }
+
+  .dimsum-nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 4px;
+  }
+
+  .dimsum-nav-links a {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+
+  .dimsum-header-actions {
+    width: 100%;
+    justify-content: center;
+    order: 2;
+    gap: 15px;
+  }
+
+  .dimsum-profile-trigger {
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dimsum-footer-top {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .dimsum-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .dimsum-whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .dimsum-whatsapp-float i {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  .dimsum-logo-text {
+    font-size: 20px;
+  }
+
+  .dimsum-nav-links a {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .dimsum-profile-trigger span {
+    font-size: 12px;
+  }
+
+  .dimsum-profile-trigger {
+    min-width: 90px;
+    padding: 5px 10px;
+  }
+
+  .dimsum-cart-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .dimsum-cart-icon i {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dimsum-logo {
+    gap: 6px;
+  }
+
+  .dimsum-logo-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .dimsum-logo-text {
+    font-size: 18px;
+  }
+
+  .dimsum-profile-trigger span {
+    display: none;
+  }
+
+  .dimsum-dropdown-menu {
+    width: 160px;
+  }
+}
